@@ -1,0 +1,106 @@
+{
+  "curso": "Ciência da Computação",
+  "nivel": "Ensino Superior",
+  "documento_base": "Diretrizes Curriculares Nacionais (DCNs) - Resolução CNE/CES nº 5, de 16 de novembro de 2016",
+  "objetivos_gerais": [
+    "Formar profissionais com sólida base em fundamentos da computação.",
+    "Capacitar para projetar, desenvolver e implantar soluções computacionais.",
+    "Considerar aspectos éticos, sociais e ambientais no exercício profissional."
+  ],
+  "competencias_gerais": [
+    "Analisar, projetar e desenvolver sistemas de software e hardware.",
+    "Aplicar fundamentos matemáticos, científicos e tecnológicos na resolução de problemas.",
+    "Avaliar impacto das soluções computacionais no contexto organizacional e social.",
+    "Atuar em equipes multidisciplinares.",
+    "Aprender de forma autônoma e contínua."
+  ],
+  "competencias_especificas": [
+    "Dominar estruturas de dados, algoritmos e linguagens de programação.",
+    "Conhecer arquitetura de computadores e sistemas operacionais.",
+    "Projetar e gerenciar bancos de dados.",
+    "Desenvolver sistemas distribuídos e redes de computadores.",
+    "Aplicar técnicas de engenharia de software.",
+    "Trabalhar com inteligência artificial e ciência de dados.",
+    "Considerar segurança, ética e sustentabilidade em soluções de TI."
+  ],
+  "areas_formacao": {
+    "fundamentos_computacao": ["matemática", "lógica", "algoritmos"],
+    "sistemas_computacao": ["arquitetura de computadores", "sistemas operacionais", "redes"],
+    "tecnologias_desenvolvimento": ["programação", "engenharia de software", "bancos de dados"],
+    "aspectos_teoricos": ["autômatos", "linguagens formais", "computabilidade"],
+    "integracao_aplicacao": ["projetos integradores", "estágio supervisionado", "TCC"]
+  },
+  "perfil_egresso": "Profissional crítico, ético, inovador e apto a aplicar conhecimento técnico para desenvolvimento científico, tecnológico e social.",
+  "carga_horaria_minima_horas": 3000,
+  "componentes_obrigatorios": [
+    "Projeto Integrador",
+    "Estágio Supervisionado (mínimo de 200 horas)",
+    "Trabalho de Conclusão de Curso (TCC)"
+  ],
+  "formacao_complementar": [
+    "Atividades extensionistas",
+    "Disciplinas optativas",
+    "Projetos de pesquisa e inovação"
+  ],
+  "referencias_normativas": [
+    {
+      "titulo": "Resolução CNE/CES nº 5, de 16 de novembro de 2016",
+      "link": "http://portal.mec.gov.br/index.php?option=com_docman&view=download&alias=53601-rces005-16-pdf&category_slug=novembro-2016-pdf&Itemid=30192",
+      "orgao": "Conselho Nacional de Educação / MEC"
+    },
+    {
+      "titulo": "Catálogo Nacional de Cursos Superiores de Tecnologia",
+      "link": "https://www.gov.br/mec/pt-br",
+      "orgao": "Ministério da Educação"
+    },
+    {
+      "titulo": "Diretrizes Curriculares da Educação Superior",
+      "link": "https://emec.mec.gov.br/",
+      "orgao": "MEC / e-MEC"
+    }
+  ],
+  "referencias_bibliograficas": [
+    {
+      "autor": "Cormen, T.; Leiserson, C.; Rivest, R.; Stein, C.",
+      "titulo": "Algoritmos: Teoria e Prática",
+      "edicao": "3ª edição",
+      "ano": 2012,
+      "editora": "Elsevier"
+    },
+    {
+      "autor": "Tanenbaum, A.; Bos, H.",
+      "titulo": "Sistemas Operacionais Modernos",
+      "edicao": "4ª edição",
+      "ano": 2015,
+      "editora": "Pearson"
+    },
+    {
+      "autor": "Silberschatz, A.; Korth, H.; Sudarshan, S.",
+      "titulo": "Sistema de Banco de Dados",
+      "edicao": "6ª edição",
+      "ano": 2011,
+      "editora": "McGraw-Hill"
+    },
+    {
+      "autor": "Sommerville, I.",
+      "titulo": "Engenharia de Software",
+      "edicao": "10ª edição",
+      "ano": 2018,
+      "editora": "Pearson"
+    },
+    {
+      "autor": "Russell, S.; Norvig, P.",
+      "titulo": "Inteligência Artificial",
+      "edicao": "3ª edição",
+      "ano": 2013,
+      "editora": "Elsevier"
+    },
+    {
+      "autor": "Hopcroft, J.; Motwani, R.; Ullman, J.",
+      "titulo": "Introdução à Teoria da Computação",
+      "edicao": "2ª edição",
+      "ano": 2006,
+      "editora": "Campus"
+    }
+  ]
+}

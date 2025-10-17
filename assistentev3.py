@@ -1,10 +1,12 @@
 import oci
+import json
+from typing import Dict, Any
 
 # Configuração do ambiente OCI
 CONFIG_PROFILE = "DEFAULT"
-CONFIG_PATH = r"C:\Users\adria\.oci\config"
-COMPARTMENT_ID = "ocid1.tenancy.oc1..aaaaaaaahqt2p7d7dgi4y7d3vlmqmfxeh3rkcuyjxcifg6tzdlotqqovfdda"
-ENDPOINT_ID = "ocid1.generativeaiendpoint.oc1.sa-saopaulo-1.amaaaaaaj6wdqoyayulrohfwrlvlag2zi3ecbsa6gxjqektgu5r2gx2vadjq"
+CONFIG_PATH = r"C:\Users\Usuario\.oci\config"
+COMPARTMENT_ID = "ocid1.tenancy.oc1..aaaaaaaa2r7rgrqrxbbyaff7wk4iohx7zfldzcyw24z3eznmmg3mr7juhywa"
+#ENDPOINT_ID = "ocid1.generativeaiendpoint.oc1.sa-saopaulo-1.amaaaaaaj6wdqoyayulrohfwrlvlag2zi3ecbsa6gxjqektgu5r2gx2vadjq"
 ENDPOINT_URL = "https://inference.generativeai.sa-saopaulo-1.oci.oraclecloud.com"
 
 # Inicializando o cliente OCI
@@ -17,6 +19,7 @@ generative_ai_client = oci.generative_ai_inference.GenerativeAiInferenceClient(
 historico = []
 MAX_HISTORICO = 5  # Número máximo de interações armazenadas
 feedbacks = []  # Lista para armazenar feedbacks
+
 
 # Perfis disponíveis
 PERSONAS = {
@@ -58,7 +61,7 @@ def criar_chat_request(pergunta, persona, estilo):
 def criar_chat_detail(chat_request):
     """Cria o objeto de detalhes do chat."""
     chat_detail = oci.generative_ai_inference.models.ChatDetails()
-    chat_detail.serving_mode = oci.generative_ai_inference.models.DedicatedServingMode(endpoint_id=ENDPOINT_ID)
+    chat_detail.serving_mode = oci.generative_ai_inference.models.OnDemandServingMode(model_id="ocid1.generativeaimodel.oc1.sa-saopaulo-1.amaaaaaask7dceyaxu7lvx6k45r2hapxtuc2q5rleaujcowq6xbcywwtzhsq")
     chat_detail.chat_request = chat_request
     chat_detail.compartment_id = COMPARTMENT_ID
     return chat_detail
@@ -90,3 +93,30 @@ def atualizar_historico(pergunta, resposta):
 def registrar_feedback(pergunta, resposta, feedback):
     """Registra a avaliação do usuário sobre a resposta recebida."""
     feedbacks.append({"pergunta": pergunta, "resposta": resposta, "feedback": feedback})
+
+
+def carregar_dcns(caminho_arquivo: str) -> Dict[str, Any]:
+    """
+    Carrega o JSON das Diretrizes Curriculares Nacionais (DCNs) de Computação.
+
+    Args:
+        caminho_arquivo (str): Caminho para o arquivo JSON. Default: "dcns.json"
+
+    Returns:
+        dict: Estrutura do JSON carregada em um dicionário Python.
+    """
+    try:
+        with open(caminho_arquivo, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+        return dados
+    except FileNotFoundError:
+        print(f"❌ Arquivo não encontrado: {caminho_arquivo}")
+        return {}
+    except json.JSONDecodeError:
+        print(f"❌ Erro ao decodificar JSON em {caminho_arquivo}")
+        return {}
+
+caminho = r'C:\Users\Usuario\Documents\IAPP\iapp_oci_prototipo\DCNS\DCN_COMPUTACACAO.json'
+dados = carregar_dcns(caminho)
+CURSO = dados['curso']
+COMPETENCIAS_GERAIS = dados['competencias_gerais']

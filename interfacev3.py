@@ -1,8 +1,8 @@
 import streamlit as st
-from assistentev3 import consultar_modelo, registrar_feedback, historico, PERSONAS, ESTILOS
+from assistentev3 import consultar_modelo, registrar_feedback, historico, PERSONAS, ESTILOS, CURSO, COMPETENCIAS_GERAIS
 
 # Configuração da Interface
-st.title("Chatbot com Oracle Generative AI")
+st.title("IAPP - Melhor amigo do professor.")
 
 # Inicializa histórico no session_state
 if "historico" not in st.session_state:
@@ -15,6 +15,14 @@ persona = st.selectbox("Selecione um perfil:", list(PERSONAS.keys()))
 # Escolha do Estilo
 st.subheader("Escolha o Estilo de Resposta")
 estilo = st.selectbox("Selecione um tom:", list(ESTILOS.keys()))
+
+##st.subheader("Escolha o curso")
+##curso = st.selectbox("Selecione um curso:", CURSO)
+##
+##st.subheader("Selecione a competência geral")
+##competencia_geral = st.selectbox("Selecione a competência geral:", CURSO)
+
+
 
 # Exibir histórico de conversas
 st.subheader("Histórico de Conversas")
